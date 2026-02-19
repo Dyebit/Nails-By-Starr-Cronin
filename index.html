@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nails by Starr | Nail Technician in Clio, MI</title>
+<meta name="description" content="Nail Technician offering Nail Enhancements, Hard Gel, Shellac, and Pedicures at Studio 57 in Clio, Michigan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f0dcc8;
+  --pink-soft: #e8b4b8;
+  --pink-bright: #e84393;
+  --pink-light: #f8c8d4;
+  --orange-red: #d94f30;
+  --orange: #e8834a;
+  --orange-light: #f0a868;
+  --peach: #f5d5b8;
+  --white: #ffffff;
+  --text-dark: #2d1810;
+  --text-medium: #5a3e30;
+  --text-light: #8a6e5e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ===== RETRO STRIPE HEADER BACKGROUND ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, var(--pink-bright) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, var(--orange) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, var(--orange-light) 0%, transparent 40%),
+    linear-gradient(135deg, var(--pink-bright) 0%, var(--orange-red) 25%, var(--orange) 50%, var(--orange-light) 75%, var(--cream) 100%);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+/* Retro wavy stripes */
+.hero-stripes {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 70%;
+  height: 140%;
+  z-index: 0;
+  opacity: 0.12;
+  transform: rotate(-15deg);
+}
+
+.hero-stripes div {
+  position: absolute;
+  border-radius: 50%;
+  border: 0 solid transparent;
+}
+
+.hero-stripes div:nth-child(1) { width: 100%; height: 100%; border: 40px solid var(--pink-bright); }
+.hero-stripes div:nth-child(2) { width: 85%; height: 85%; top: 7.5%; left: 7.5%; border: 35px solid var(--orange-red); }
+.hero-stripes div:nth-child(3) { width: 70%; height: 70%; top: 15%; left: 15%; border: 30px solid var(--orange); }
+.hero-stripes div:nth-child(4) { width: 55%; height: 55%; top: 22.5%; left: 22.5%; border: 25px solid var(--orange-light); }
+.hero-stripes div:nth-child(5) { width: 40%; height: 40%; top: 30%; left: 30%; border: 20px solid var(--pink-soft); }
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 32px rgba(216, 79, 48, 0.2);
+  animation: floatIn 1s ease-out;
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.hero h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--orange-red);
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+  animation: floatIn 1s ease-out 0.2s both;
+}
+
+.hero h1 span {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.5em;
+  color: var(--text-medium);
+  display: block;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin: 1rem 0 0.5rem;
+  font-weight: 300;
+  animation: floatIn 1s ease-out 0.4s both;
+}
+
+.hero-location {
+  font-size: 0.95rem;
+  color: var(--text-medium);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  animation: floatIn 1s ease-out 0.5s both;
+}
+
+.hero-location svg {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: floatIn 1s ease-out 0.6s both;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--orange-red);
+  color: white;
+  box-shadow: 0 4px 16px rgba(216, 79, 48, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--pink-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(232, 67, 147, 0.35);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--orange-red);
+  border: 2px solid var(--orange-red);
+}
+
+.btn-secondary:hover {
+  background: var(--orange-red);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn svg { width: 18px; height: 18px; }
+
+/* Scroll indicator */
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  z-index: 1;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-hint svg { width: 28px; height: 28px; color: var(--text-light); opacity: 0.5; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* ===== NAV (sticky on scroll) ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(240, 220, 200, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border-bottom: 1px solid rgba(216, 79, 48, 0.1);
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text-medium);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.nav a:hover { color: var(--orange-red); }
+
+.nav-logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.3rem;
+  color: var(--orange-red);
+}
+
+/* ===== SECTIONS COMMON ===== */
+section {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pink-bright);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--orange-red);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  font-weight: 300;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* ===== GALLERY ===== */
+#gallery { padding-bottom: 3rem; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(216, 79, 48, 0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img { transform: scale(1.08); }
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(216, 79, 48, 0.15) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover::after { opacity: 1; }
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.9);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: pointer;
+}
+
+.lightbox.active { display: flex; }
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 60px rgba(216, 79, 48, 0.2);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.lightbox-close:hover { background: rgba(255,255,255,0.3); }
+
+/* ===== SERVICES / PRICING ===== */
+#services {
+  background: white;
+  max-width: 100%;
+  padding: 5rem 2rem;
+}
+
+#services > div {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.price-card {
+  background: var(--cream);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(216, 79, 48, 0.08);
+}
+
+.price-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(216, 79, 48, 0.12);
+}
+
+.price-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+}
+
+.price-amount {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem;
+  color: var(--orange-red);
+}
+
+.price-note {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Decorative daisy */
+.daisy {
+  display: inline-block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin: 0 4px;
+}
+
+.daisy::before {
+  content: '✿';
+  font-size: 1.4rem;
+  color: var(--pink-soft);
+}
+
+/* ===== LOCATION / CONTACT ===== */
+#contact {
+  text-align: center;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem;
+  margin-top: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-card h3 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.6rem;
+  color: var(--orange-red);
+  margin-bottom: 0.25rem;
+}
+
+.contact-studio {
+  font-weight: 600;
+  color: var(--text-medium);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-address {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.contact-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--orange-red);
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s;
+}
+
+.contact-phone:hover { color: var(--pink-bright); }
+
+.contact-phone svg { width: 22px; height: 22px; }
+
+.contact-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--orange-red);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  background: var(--orange-red);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.social-link svg { width: 22px; height: 22px; }
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(216, 79, 48, 0.1);
+}
+
+footer span {
+  font-family: 'Pacifico', cursive;
+  color: var(--orange-red);
+}
+
+/* ===== REVEAL ANIMATION ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .nav { gap: 1rem; padding: 0.75rem 1rem; }
+  .nav a { font-size: 0.8rem; }
+  .hero-logo { width: 150px; height: 150px; }
+  section { padding: 3.5rem 1.5rem; }
+  .contact-card { padding: 2rem 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .btn { width: 100%; max-width: 280px; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-stripes">
+    <div></div><div></div><div></div><div></div><div></div>
+  </div>
+  <div class="hero-content">
+    <img src="images/logo.png" alt="Nails by Starr" class="hero-logo">
+    <h1>Nails by Starr<span>Starr Cronin</span></h1>
+    <p class="hero-tagline">Nail Enhancements &bull; Hard Gel &bull; Shellac &bull; Pedicures</p>
+    <p class="hero-location">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Studio 57 &bull; Clio, Michigan
+    </p>
+    <div class="hero-buttons">
+      <a href="tel:8106865757" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Now
+      </a>
+      <a href="#gallery" class="btn btn-secondary">See My Work</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">Nails by Starr</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#services">Pricing</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="reveal">
+    <p class="section-label">My Work</p>
+    <h2 class="section-title">Latest Creations</h2>
+    <p class="section-subtitle">From custom hand-painted art to classic gel sets — every set is made to match your vibe.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="images/nail12.png" alt="Floral nail art" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="images/nail1.png" alt="Leopard print nails" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="images/nail6.png" alt="Beach themed nails" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="images/nail8.png" alt="Character nail art" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="images/nail3.png" alt="Peppermint swirl nails" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="images/nail4.png" alt="Rainbow tie-dye nails" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="images/nail11.png" alt="Cherry 8-ball nails" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="images/nail9.png" alt="Frog and daisy nails" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="images/nail7.png" alt="Patriotic star nails" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="images/nail2.png" alt="Holiday nail art" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="images/nail13.png" alt="Pink and green glitter nails" loading="lazy"></div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)"><img src="images/nail10.png" alt="Chrome cat-eye nails" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close">&times;</button>
+  <img src="" alt="Nail art closeup" id="lightboxImg">
+</div>
+
+<!-- SERVICES / PRICING -->
+<section id="services">
+  <div>
+    <div class="reveal" style="text-align:center;">
+      <p class="section-label">Services & Pricing</p>
+      <h2 class="section-title">Price List</h2>
+    </div>
+    <div class="pricing-grid reveal">
+      <div class="price-card">
+        <span class="price-name">Gel Manicure</span>
+        <span class="price-amount">$40</span>
+      </div>
+      <div class="price-card">
+        <span class="price-name">Hard Gel Full Set</span>
+        <span class="price-amount">$60+</span>
+      </div>
+      <div class="price-card">
+        <span class="price-name">Hard Gel Fill</span>
+        <span class="price-amount">$50+</span>
+      </div>
+      <div class="price-card">
+        <span class="price-name">Gel-X Full Set</span>
+        <span class="price-amount">$70+</span>
+      </div>
+      <div class="price-card">
+        <span class="price-name">Gel-X Fill</span>
+        <span class="price-amount">$50+</span>
+      </div>
+      <div class="price-card">
+        <span class="price-name">Gel Pedicure</span>
+        <span class="price-amount">$65</span>
+      </div>
+      <div class="price-card">
+        <span class="price-name">Regular Pedicure</span>
+        <span class="price-amount">$55</span>
+      </div>
+    </div>
+    <p class="price-note reveal">All base prices include glitter / simple art. Detailed art price varies by design.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="reveal">
+    <p class="section-label">Book an Appointment</p>
+    <h2 class="section-title">Let's Get You In <span class="daisy"></span></h2>
+  </div>
+  <div class="contact-card reveal">
+    <h3>Nails by Starr Cronin</h3>
+    <p class="contact-studio">Studio 57</p>
+    <p class="contact-address">4215 W Vienna Rd<br>Clio, MI 48420</p>
+    <a href="tel:8106865757" class="contact-phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (810) 686-5757
+    </a>
+    <br><br>
+    <div class="contact-actions">
+      <a href="tel:8106865757" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call to Book
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100093051326814" target="_blank" rel="noopener" class="social-link" title="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 <span>Nails by Starr</span>. All rights reserved.</p>
+</footer>
+
+<script>
+// Reveal on scroll
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el, i) {
+  el.style.transitionDelay = (i % 4) * 0.1 + 's';
+  observer.observe(el);
+});
+
+// Lightbox
+function openLightbox(el) {
+  var src = el.querySelector('img').src;
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// Smooth scroll for nav
+document.querySelectorAll('.nav a[href^="#"], .hero-buttons a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
